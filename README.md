@@ -1,2 +1,2 @@
-# CRUD
-CRUD para a empresa
+# CRUD para a Empresa
+Este repositório contém uma aplicação simples de CRUD (Create, Read, Update, Delete) desenvolvida para automatizar processos na empresa onde trabalho. O objetivo principal é substituir o uso de planilhas manuais (como Excel ou Google Sheets) por um sistema baseado em banco de dados, melhorando a eficiência, reduzindo erros e facilitando o acesso e a manutenção de dados.
