@@ -3,117 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modal Usuário - Cópia</title>
+    <title>Modal Saúde e Segurança</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/modalSaude.css">
 </head>
 <body class="p-4">
 
-    <h4>Teste do Modal (cópia do modal de usuário)</h4>
-    <p>Esta página contém um clone do modal de usuário presente em `index.html`. Edite à vontade.</p>
+    <h4>Modal Saúde e Segurança do Trabalho</h4>
 
-    <!-- Botão para abrir o modal -->
+    <!-- Botão para abrir -->
     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalUsuario">
-        Abrir Modal Usuário
+        Abrir Modal
     </button>
-
-    <!-- Modal Novo/Editar Usuário (copiado) -->
-    <div class="modal fade" id="modalUsuario" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
+    <button class="btn btn-dark" onclick="window.location.href='index.html'">Voltar</button>
+    <!-- Modal -->
+    <div class="modal fade" id="modalUsuario" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalTitulo">Novo Usuário</h5>
-                    <button type="button" class="btn-close btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h5 class="modal-title">Saúde e Segurança do Trabalho</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
                     <form id="usuarioForm">
+
+                        <!-- ASO (fixo) -->
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                                <label for="nome" class="form-label">Matrícula</label>
-                                <input type="text" class="form-control" id="matricula" pattern="[0-9]*" inputmode="numeric" required>
+                                <label class="form-label">Data do ASO:</label>
+                                <input type="date" class="form-control" id="dataASO" name="dataASO" required>
                             </div>
                             <div class="col-md-6 mb-3">
-                                <label for="nome" class="form-label">Nome Completo</label>
-                                <input type="text" class="form-control" id="email" required>
+                                <label class="form-label">Arquivo do ASO:</label>
+                                <input type="file" class="form-control" id="ASO" name="ASO" accept=".pdf" required>
+                                <small class="text-muted">Apenas PDF, máx. 5MB</small>
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label for="funcao">Função</label>
-                                <select class="form-select" id="funcoes">
-                                    <option value="null">Selecione</option>
-                                    <option value="escalador">Escalador</option>
-                                    <option value="artifice">Artífice</option>
-                                    <option value="ajudante">Ajudante</option>
-                                    <option value="tst">Técnico de Segurança do Trabalho</option>
-                                    <option value="vigia">Vigia</option>
-                                    <option value="especialista">Especialista</option>
-                                    <option value="encarregado">Encarregado</option>
-                                    <option value="motorista">Motorista</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="nivel" class="form-label">Nivel da função</label>
-                                <select class="form-select" id="nivel">
-                                    <option value="1">I</option>
-                                    <option value="2">II</option>
-                                    <option value="3">III</option>
-                                </select>
+                        <hr class="divider">
+
+                        <!-- Lista de Documentos -->
+                        <div class="mb-3">
+                            <label class="form-label">Documentos Obrigatórios</label>
+                            <div class="checkbox-grid" id="checkboxContainer">
+                                <!-- Gerado via JS -->
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label for="cpf">CPF</label>
-                                <input type="text" class="form-control" id="cpf" pattern="[0-9]*" inputmode="numeric" required>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="foto">Foto de Perfil</label>
-                                <input type="file" class="form-control" id="foto" accept="image/*">
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="data">Data de Nascimento</label>
-                                    <input type="date" class="form-control" id="data">
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="admissao">Admissão</label>
-                                    <input type="date" class="form-control" id="admissao">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="demissional">Demissional</label>
-                                    <input type="date" class="form-control" id="data">
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="cep">CEP</label>
-                                    <input type="text" class="form-control" id="cep">
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="cidade">Cidade</label>
-                                    <input type="text" class="form-control" id="cidade">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <label for="logradouro">Logradouro</label>
-                                <input type="text" class="form-control" id="logradouro">
-                            </div>
+                        <!-- Campos dinâmicos -->
+                        <div id="documentosContainer"></div>
+
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" id="btnAvancar" class="btn btn-outline-dark">Avançar</button>
+                    <button type="button" class="btn btn-outline-success" onclick="salvar()">Salvar</button>
                 </div>
             </div>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/modalSaude.js"></script>
 </body>
 </html>
