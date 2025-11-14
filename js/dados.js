@@ -59,7 +59,7 @@ function atualizarTabelaUsuarios() {
                 <td>${usuario.telefone}</td>
                 <td>
                     <div class="btn-group btn-group-sm" role="group">
-                        <button type='button' class='btn btn-info btnVisualizar' data-usuario='${usuario.id}' title="Visualizar usuário">
+                        <button type='button' class='btn btn-info btnVisualizar d-flex' data-usuario='${usuario.id}' title="Visualizar usuário">
                             <i class='bi bi-eye'></i> Visualizar
                         </button>
                         <button type='button' class='btn btn-warning btnEditar' data-usuario='${usuario.id}' title="Editar usuário">
